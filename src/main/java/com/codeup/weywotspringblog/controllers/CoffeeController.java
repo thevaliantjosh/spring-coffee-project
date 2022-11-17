@@ -47,7 +47,6 @@ public class CoffeeController {
         return "create-coffee";
     }
 
-
     @PostMapping("/new")
     public String addCoffee(@RequestParam(name="roast") String roast, @RequestParam(name="origin") String origin, @RequestParam(name="brand") String brand){
         Coffee coffee = new Coffee(roast, origin, brand);
@@ -60,5 +59,4 @@ public class CoffeeController {
         model.addAttribute("email", email);
         return "coffee";
     }
-
 }
