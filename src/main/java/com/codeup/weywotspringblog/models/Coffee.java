@@ -86,4 +86,6 @@ public class Coffee {
         this.brand = brand;
         this.supplier = supplier;
     }
+
+    //Comment
 }
