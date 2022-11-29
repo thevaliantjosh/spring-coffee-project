@@ -2,10 +2,13 @@ package com.codeup.weywotspringblog.models;
 // This is a POJO ("Plain Old Java Object")
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="coffees")
 public class Coffee {
+
+    //Instance Variables
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -21,6 +24,11 @@ public class Coffee {
 
     @ManyToOne
     private Supplier supplier;
+
+    @ManyToMany(mappedBy = "coffeeList")
+    private List<Customer> customers;
+
+    //Getters and Setters
 
     public String getRoast() {
         return roast;
@@ -61,6 +69,17 @@ public class Coffee {
     public void setSupplier(Supplier supplier) {
         this.supplier = supplier;
     }
+
+    public List<Customer> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(List<Customer> customers) {
+        this.customers = customers;
+    }
+
+    //Constructors
+
 
     public Coffee() {
     }

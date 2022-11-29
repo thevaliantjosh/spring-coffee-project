@@ -7,6 +7,8 @@ import java.util.List;
 @Table(name = "suppliers")
 public class Supplier {
 
+    //Instance Variables
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -17,6 +19,8 @@ public class Supplier {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "supplier")
     private List<Coffee> coffees;
 
+
+    //Getters and Setters
     public long getId() {
         return id;
     }
@@ -33,6 +37,16 @@ public class Supplier {
         this.name = name;
     }
 
+    public List<Coffee> getCoffees() {
+        return coffees;
+    }
+
+    public void setCoffees(List<Coffee> coffees) {
+        this.coffees = coffees;
+    }
+
+    //Constructors
+
     public Supplier() {
     }
 
@@ -44,4 +58,12 @@ public class Supplier {
         this.id = id;
         this.name = name;
     }
+
+    public Supplier(long id, String name, List<Coffee> coffees) {
+        this.id = id;
+        this.name = name;
+        this.coffees = coffees;
+    }
+
+
 }

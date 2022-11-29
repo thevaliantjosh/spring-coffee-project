@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>All Our Coffees</title>
+    <script src="../static/js/main.js"></script>
 </head>
 <body>
 <div>
@@ -12,9 +13,13 @@
             <span th:text="${coffee.brand}"></span>
             <span th:text="${coffee.origin}"></span>
             <span th:text="${coffee.roast}"></span>
+                <button class="favorite" th:data-coffee-id="${coffee.id}" th:data-customer-id="2">Favorite</button>
             </a>
         </li>
     </ul>
 </div>
+<!--jQuery-->
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="/js/main.js"></script>
 </body>
 </html>
